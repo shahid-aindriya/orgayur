@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class MarketPlaceController extends GetxController {
-  //TODO: Implement MarketPlaceController
+class ServiceController extends GetxController {
+  //TODO: Implement ServiceController
 
   final count = 0.obs;
   @override

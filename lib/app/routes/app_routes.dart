@@ -16,6 +16,10 @@ abstract class Routes {
   static const MACHINERY = _Paths.MACHINERY;
   static const SERVICES = _Paths.SERVICES;
   static const KNOWLEDGE_BASE = _Paths.KNOWLEDGE_BASE;
+  static const BOTTOM_BARS = _Paths.BOTTOM_BARS;
+  static const SERVICE = _Paths.SERVICE;
+  static const ORGAYUR_HOME = _Paths.ORGAYUR_HOME;
+  static const USER_PROFILE = _Paths.USER_PROFILE;
 }
 
 abstract class _Paths {
@@ -31,4 +35,8 @@ abstract class _Paths {
   static const MACHINERY = '/machinery';
   static const SERVICES = '/services';
   static const KNOWLEDGE_BASE = '/knowledge-base';
+  static const BOTTOM_BARS = '/bottom-bars';
+  static const SERVICE = '/service';
+  static const ORGAYUR_HOME = '/orgayur-home';
+  static const USER_PROFILE = '/user-profile';
 }

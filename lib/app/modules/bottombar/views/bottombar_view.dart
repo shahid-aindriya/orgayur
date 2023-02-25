@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:orgayur/app/colors/colors.dart';
-import 'package:orgayur/app/modules/e_commerce/views/e_commerce_view.dart';
-import 'package:orgayur/app/modules/knowledge_base/views/knowledge_base_view.dart';
-import 'package:orgayur/app/modules/machinery/views/machinery_view.dart';
+import 'package:orgayur/app/modules/home/views/home_view.dart';
+
 import 'package:orgayur/app/modules/market_place/views/market_place_view.dart';
-import 'package:orgayur/app/modules/services/views/services_view.dart';
+import 'package:orgayur/app/modules/orgayur_home/views/orgayur_home_view.dart';
+import 'package:orgayur/app/modules/service/views/service_view.dart';
+import 'package:orgayur/app/modules/user_profile/views/user_profile_view.dart';
 
 import '../controllers/bottombar_controller.dart';
 
@@ -15,11 +16,11 @@ class BottombarView extends GetView<BottombarController> {
   @override
   Widget build(BuildContext context) {
     final pages = [
+      HomeView(),
+      ServiceView(),
+      OrgayurHomeView(),
       MarketPlaceView(),
-      ECommerceView(),
-      MachineryView(),
-      ServicesView(),
-      KnowledgeBaseView()
+      UserProfileView()
     ];
     return Scaffold(
       backgroundColor: bgcolor,
@@ -43,31 +44,32 @@ class BottombarView extends GetView<BottombarController> {
                 onTap: ((newIndex) {
                   BottombarView.selectedPageIndex.value = newIndex;
                 }),
-                type: BottomNavigationBarType.fixed,
+                type: BottomNavigationBarType.shifting,
                 items: [
                   BottomNavigationBarItem(
                       icon: ImageIcon(
-                        AssetImage("assets/images/bxs_home-alt-2.png"),
+                        AssetImage("assets/images/bottom_bar_first.png"),
                       ),
                       label: ''),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
-                        AssetImage("assets/images/bxs_cart.png"),
+                        AssetImage("assets/images/bottom_bar_second.png"),
                       ),
                       label: ''),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
-                        AssetImage("assets/images/Gear.png"),
+                        size: 45,
+                        AssetImage("assets/images/bottom_bar_third.png"),
                       ),
                       label: ''),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
-                        AssetImage("assets/images/Wrench.png"),
+                        AssetImage("assets/images/bottom_bar_fourth.png"),
                       ),
                       label: ''),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
-                        AssetImage("assets/images/ri_plant-fill.png"),
+                        AssetImage("assets/images/bottom_bar_fifth.png"),
                       ),
                       label: '')
                 ]),

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class MarketPlaceController extends GetxController {
-  //TODO: Implement MarketPlaceController
+class OrgayurHomeController extends GetxController {
+  //TODO: Implement OrgayurHomeController
 
   final count = 0.obs;
   @override

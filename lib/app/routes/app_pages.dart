@@ -1,29 +1,28 @@
 import 'package:get/get.dart';
 
-import 'package:orgayur/app/modules/bottombar/bindings/bottombar_binding.dart';
-import 'package:orgayur/app/modules/bottombar/views/bottombar_view.dart';
-import 'package:orgayur/app/modules/e_commerce/bindings/e_commerce_binding.dart';
-import 'package:orgayur/app/modules/e_commerce/views/e_commerce_view.dart';
-import 'package:orgayur/app/modules/home/bindings/home_binding.dart';
-import 'package:orgayur/app/modules/home/views/home_view.dart';
-import 'package:orgayur/app/modules/knowledge_base/bindings/knowledge_base_binding.dart';
-import 'package:orgayur/app/modules/knowledge_base/views/knowledge_base_view.dart';
-import 'package:orgayur/app/modules/location_detected/bindings/location_detected_binding.dart';
-import 'package:orgayur/app/modules/location_detected/views/location_detected_view.dart';
-import 'package:orgayur/app/modules/location_screen/bindings/location_screen_binding.dart';
-import 'package:orgayur/app/modules/location_screen/views/location_screen_view.dart';
-import 'package:orgayur/app/modules/login_screen/bindings/login_screen_binding.dart';
-import 'package:orgayur/app/modules/login_screen/views/login_screen_view.dart';
-import 'package:orgayur/app/modules/machinery/bindings/machinery_binding.dart';
-import 'package:orgayur/app/modules/machinery/views/machinery_view.dart';
-import 'package:orgayur/app/modules/market_place/bindings/market_place_binding.dart';
-import 'package:orgayur/app/modules/market_place/views/market_place_view.dart';
-import 'package:orgayur/app/modules/otp_screen/bindings/otp_screen_binding.dart';
-import 'package:orgayur/app/modules/otp_screen/views/otp_screen_view.dart';
-import 'package:orgayur/app/modules/services/bindings/services_binding.dart';
-import 'package:orgayur/app/modules/services/views/services_view.dart';
-import 'package:orgayur/app/modules/splash_screen/bindings/splash_screen_binding.dart';
-import 'package:orgayur/app/modules/splash_screen/views/splash_screen_view.dart';
+import '../modules/bottombar/bindings/bottombar_binding.dart';
+import '../modules/bottombar/views/bottombar_view.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+
+import '../modules/location_detected/bindings/location_detected_binding.dart';
+import '../modules/location_detected/views/location_detected_view.dart';
+import '../modules/location_screen/bindings/location_screen_binding.dart';
+import '../modules/location_screen/views/location_screen_view.dart';
+import '../modules/login_screen/bindings/login_screen_binding.dart';
+import '../modules/login_screen/views/login_screen_view.dart';
+import '../modules/market_place/bindings/market_place_binding.dart';
+import '../modules/market_place/views/market_place_view.dart';
+import '../modules/orgayur_home/bindings/orgayur_home_binding.dart';
+import '../modules/orgayur_home/views/orgayur_home_view.dart';
+import '../modules/otp_screen/bindings/otp_screen_binding.dart';
+import '../modules/otp_screen/views/otp_screen_view.dart';
+import '../modules/service/bindings/service_binding.dart';
+import '../modules/service/views/service_view.dart';
+import '../modules/splash_screen/bindings/splash_screen_binding.dart';
+import '../modules/splash_screen/views/splash_screen_view.dart';
+import '../modules/user_profile/bindings/user_profile_binding.dart';
+import '../modules/user_profile/views/user_profile_view.dart';
 
 part 'app_routes.dart';
 
@@ -69,29 +68,24 @@ class AppPages {
       binding: BottombarBinding(),
     ),
     GetPage(
+      name: _Paths.SERVICE,
+      page: () => const ServiceView(),
+      binding: ServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORGAYUR_HOME,
+      page: () => const OrgayurHomeView(),
+      binding: OrgayurHomeBinding(),
+    ),
+    GetPage(
       name: _Paths.MARKET_PLACE,
-      page: () => MarketPlaceView(),
+      page: () => const MarketPlaceView(),
       binding: MarketPlaceBinding(),
     ),
     GetPage(
-      name: _Paths.E_COMMERCE,
-      page: () => ECommerceView(),
-      binding: ECommerceBinding(),
-    ),
-    GetPage(
-      name: _Paths.MACHINERY,
-      page: () => MachineryView(),
-      binding: MachineryBinding(),
-    ),
-    GetPage(
-      name: _Paths.SERVICES,
-      page: () => ServicesView(),
-      binding: ServicesBinding(),
-    ),
-    GetPage(
-      name: _Paths.KNOWLEDGE_BASE,
-      page: () => KnowledgeBaseView(),
-      binding: KnowledgeBaseBinding(),
+      name: _Paths.USER_PROFILE,
+      page: () => const UserProfileView(),
+      binding: UserProfileBinding(),
     ),
   ];
 }
