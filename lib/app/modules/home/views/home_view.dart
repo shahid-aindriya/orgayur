@@ -4,12 +4,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:orgayur/app/modules/home/extra_screen/farm_shops.dart';
+import 'package:orgayur/app/modules/home/extra_screen/farm_shops_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../colors/colors.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  @override
+  final HomeController homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,58 +117,51 @@ class HomeView extends GetView<HomeController> {
                     ]),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.h),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 1.h,
-                    ),
-                    TextFormField(
-                      keyboardType: TextInputType.visiblePassword,
+                padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+                child: TextFormField(
+                  keyboardType: TextInputType.visiblePassword,
+                  enabled: true,
+                  style: GoogleFonts.roboto(
+                      fontSize: 16.sp, color: Color.fromRGBO(0, 0, 0, 1)),
+                  decoration: InputDecoration(
+                      suffixIcon: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              width: 30,
+                              height: 30,
+                              child: SvgPicture.asset(
+                                "assets/images/ep_search.svg",
+                                fit: BoxFit.cover,
+                              )),
+                        ],
+                      ),
+                      hintText: "Search",
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 14.0, horizontal: 10),
                       enabled: true,
-                      style: GoogleFonts.roboto(
-                          fontSize: 16.sp, color: Color.fromRGBO(0, 0, 0, 1)),
-                      decoration: InputDecoration(
-                          suffixIcon: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  width: 30,
-                                  height: 30,
-                                  child: SvgPicture.asset(
-                                    "assets/images/ep_search.svg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ],
-                          ),
-                          hintText: "Search",
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 14.0, horizontal: 10),
-                          enabled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(16),
-                              borderSide: BorderSide(
-                                  width: 0,
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 0,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                              borderRadius: BorderRadius.circular(16)),
-                          fillColor: Color.fromARGB(255, 255, 255, 255),
-                          focusColor: Color.fromARGB(255, 231, 231, 231)),
-                      validator: (value) {
-                        if (!RegExp(r'^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$')
-                                .hasMatch(value!) ||
-                            value.length < 3) {
-                          return 'please enter valid email';
-                        } else {
-                          return null;
-                        }
-                      },
-                    ),
-                  ],
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                          borderSide: BorderSide(
+                              width: 0,
+                              color: Color.fromARGB(255, 255, 255, 255))),
+                      filled: true,
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              width: 0,
+                              color: Color.fromARGB(255, 255, 255, 255)),
+                          borderRadius: BorderRadius.circular(16)),
+                      fillColor: Color.fromARGB(255, 255, 255, 255),
+                      focusColor: Color.fromARGB(255, 231, 231, 231)),
+                  validator: (value) {
+                    if (!RegExp(r'^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$')
+                            .hasMatch(value!) ||
+                        value.length < 3) {
+                      return 'please enter valid email';
+                    } else {
+                      return null;
+                    }
+                  },
                 ),
               ),
             ),
@@ -198,32 +195,39 @@ class HomeView extends GetView<HomeController> {
                 scrollDirection: Axis.vertical,
                 itemCount: 6,
                 itemBuilder: (context, index) {
-                  return Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      children: [
-                        Container(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10)),
-                            child:
-                                Image.asset("assets/images/category_home.png"),
+                  return InkWell(
+                    onTap: () {
+                      Get.to(FarmShops(
+                        homeController: homeController,
+                      ));
+                    },
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
+                        children: [
+                          Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10)),
+                              child: Image.asset(
+                                  "assets/images/category_home.png"),
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Fertilizers",
-                          style: GoogleFonts.roboto(
-                              color: greenGradient2, fontSize: 14),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                      ],
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Fertilizers",
+                            style: GoogleFonts.roboto(
+                                color: greenGradient2, fontSize: 14),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -263,53 +267,61 @@ class HomeView extends GetView<HomeController> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      children: [
-                        Container(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10)),
-                            child:
-                                Image.asset("assets/images/popular_item.png"),
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(FarmShopsView(
+                        homeController: homeController,
+                      ));
+                    },
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
+                        children: [
+                          Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10)),
+                              child:
+                                  Image.asset("assets/images/popular_item.png"),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: 8, top: 6, bottom: 5),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Green Choice",
-                                style: GoogleFonts.roboto(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17.sp),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8.0, bottom: 5),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                  'assets/images/location_home.svg'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "Kakkanad",
-                                style: GoogleFonts.roboto(
-                                  color: textGreenHome,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 8, top: 6, bottom: 5),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Green Choice",
+                                  style: GoogleFonts.roboto(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 17.sp),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 8.0, bottom: 5),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                    'assets/images/location_home.svg'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Kakkanad",
+                                  style: GoogleFonts.roboto(
+                                    color: textGreenHome,
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 );

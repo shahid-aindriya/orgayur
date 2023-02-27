@@ -20,6 +20,8 @@ abstract class Routes {
   static const SERVICE = _Paths.SERVICE;
   static const ORGAYUR_HOME = _Paths.ORGAYUR_HOME;
   static const USER_PROFILE = _Paths.USER_PROFILE;
+  static const PRODUCT_DETAILS = _Paths.PRODUCT_DETAILS;
+  static const CART = _Paths.CART;
 }
 
 abstract class _Paths {
@@ -39,4 +41,6 @@ abstract class _Paths {
   static const SERVICE = '/service';
   static const ORGAYUR_HOME = '/orgayur-home';
   static const USER_PROFILE = '/user-profile';
+  static const PRODUCT_DETAILS = '/product-details';
+  static const CART = '/cart';
 }

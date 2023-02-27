@@ -23,7 +23,7 @@ class BottombarView extends GetView<BottombarController> {
       UserProfileView()
     ];
     return Scaffold(
-      backgroundColor: bgcolor,
+      backgroundColor: selectedPageIndex.value != 4 ? bgcolor : whiteText,
       bottomNavigationBar: ValueListenableBuilder(
         valueListenable: BottombarView.selectedPageIndex,
         builder: (BuildContext context, int updatedIndex, Widget? _) {

@@ -2,9 +2,10 @@ import 'package:get/get.dart';
 
 import '../modules/bottombar/bindings/bottombar_binding.dart';
 import '../modules/bottombar/views/bottombar_view.dart';
+import '../modules/cart/bindings/cart_binding.dart';
+import '../modules/cart/views/cart_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-
 import '../modules/location_detected/bindings/location_detected_binding.dart';
 import '../modules/location_detected/views/location_detected_view.dart';
 import '../modules/location_screen/bindings/location_screen_binding.dart';
@@ -17,6 +18,8 @@ import '../modules/orgayur_home/bindings/orgayur_home_binding.dart';
 import '../modules/orgayur_home/views/orgayur_home_view.dart';
 import '../modules/otp_screen/bindings/otp_screen_binding.dart';
 import '../modules/otp_screen/views/otp_screen_view.dart';
+import '../modules/product_details/bindings/product_details_binding.dart';
+import '../modules/product_details/views/product_details_view.dart';
 import '../modules/service/bindings/service_binding.dart';
 import '../modules/service/views/service_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
@@ -86,6 +89,16 @@ class AppPages {
       name: _Paths.USER_PROFILE,
       page: () => const UserProfileView(),
       binding: UserProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCT_DETAILS,
+      page: () => ProductDetailsView(),
+      binding: ProductDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART,
+      page: () => const CartView(),
+      binding: CartBinding(),
     ),
   ];
 }
