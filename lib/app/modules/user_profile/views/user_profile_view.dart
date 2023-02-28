@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:orgayur/app/modules/myorders/views/myorders_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../colors/colors.dart';
@@ -113,6 +114,9 @@ class UserProfileView extends GetView<UserProfileController> {
                       ),
                     ),
                     ListTile(
+                      onTap: () {
+                        Get.to(MyordersView());
+                      },
                       leading: SvgPicture.asset("assets/images/Package.svg"),
                       minLeadingWidth: 20,
                       title: Text(

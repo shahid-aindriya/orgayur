@@ -1,41 +1,110 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:orgayur/app/modules/product_details/views/product_details_view.dart';
+import 'package:orgayur/app/modules/all%20product%20data/product_details/views/product_details_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../colors/colors.dart';
-import '../controllers/home_controller.dart';
+import '../controllers/orgayur_home_controller.dart';
 
-class FarmShopsView extends GetView<HomeController> {
-  const FarmShopsView({super.key, required this.homeController});
-  final HomeController homeController;
+class OrgayurHomeView extends GetView<OrgayurHomeController> {
+  const OrgayurHomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgcolor,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black,
+        toolbarHeight: 70,
+        title: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 1.w),
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                    width: 100.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                            width: 1, color: Color.fromRGBO(1, 134, 54, 1))),
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(left: 2.0, top: 8, bottom: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Wrap(
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Icon(
+                                  Icons.location_on,
+                                  color: Color.fromRGBO(1, 134, 54, 1),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 3.w,
+                              ),
+                              AutoSizeText(
+                                "Set Location",
+                                maxLines: 2,
+                                style: GoogleFonts.roboto(
+                                    color: Color.fromARGB(255, 104, 104, 104),
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              ),
+            ),
+          ],
         ),
-        backgroundColor: whiteText,
-        title: Text(
-          "Farm Shop",
-          style: GoogleFonts.roboto(
-              color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500),
+        actions: [
+          InkWell(
+              onTap: () {},
+              child: SvgPicture.asset("assets/images/notification_icon.svg")),
+          SizedBox(
+            width: 3.w,
+          ),
+          InkWell(
+              onTap: () {},
+              child: SvgPicture.asset("assets/images/kt_icon.svg")),
+          SizedBox(
+            width: 2.w,
+          )
+        ],
+        bottomOpacity: 12,
+        leadingWidth: 120,
+        leading: Container(
+          width: 100,
+          child: Center(
+            child: Image.asset(
+              "assets/images/orgayur_appbar_logo.png",
+              fit: BoxFit.contain,
+            ),
+          ),
         ),
+        backgroundColor: Colors.white,
       ),
       body: ListView(
         children: [
           // Figma Flutter Generator Group281Widget - GROUP
           Container(
               width: 100.w,
-              height: 340,
+              height: 280,
               child: Stack(children: <Widget>[
                 Positioned(
                     top: 0,
@@ -59,67 +128,15 @@ class FarmShopsView extends GetView<HomeController> {
                               ]),
                         ))),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Wrap(
-                            children: [
-                              Container(
-                                height: 100,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    "assets/images/farm_shops_image.png",
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Farm Shop ",
-                                    style: GoogleFonts.roboto(
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 18.sp),
-                                  ),
-                                  Text(
-                                    "Fertilizer",
-                                    style: GoogleFonts.roboto(
-                                        color: greyColorText,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 15.sp),
-                                  ),
-                                  Text(
-                                    "Kakkanad",
-                                    style: GoogleFonts.roboto(
-                                        fontWeight: FontWeight.w500,
-                                        height: 1.4,
-                                        fontSize: 16.sp),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Container(
+                    width: 100.w,
+                    height: 70,
+                    child: SvgPicture.asset("assets/images/orgayur_logo.svg"),
                   ),
                 ),
                 Positioned(
-                    top: 140,
+                    top: 80,
                     child: Container(
                         width: 100.w,
                         height: 188,
@@ -206,41 +223,26 @@ class FarmShopsView extends GetView<HomeController> {
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: () {
-                        homeController.selectedIndexs.value = index;
-                      },
-                      child: Obx(() {
-                        return Card(
-                            color: homeController.selectedIndexs.value == index
-                                ? greenGradient2
-                                : whiteText,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 30,
-                                    backgroundImage: AssetImage(
-                                        "assets/images/popular_item.png"),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    "Equipments",
-                                    style: GoogleFonts.roboto(
-                                        color: homeController
-                                                    .selectedIndexs.value ==
-                                                index
-                                            ? whiteText
-                                            : Colors.black),
-                                  )
-                                ],
-                              ),
-                            ));
-                      }),
+                      onTap: () {},
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage: AssetImage(
+                                      "assets/images/popular_item.png"),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("Equipments")
+                              ],
+                            ),
+                          )),
                     );
                   }),
             ),

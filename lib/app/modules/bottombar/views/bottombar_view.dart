@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:orgayur/app/colors/colors.dart';
-import 'package:orgayur/app/modules/home/views/home_view.dart';
+import 'package:orgayur/app/modules/all%20product%20data/home/views/home_view.dart';
 
 import 'package:orgayur/app/modules/market_place/views/market_place_view.dart';
-import 'package:orgayur/app/modules/orgayur_home/views/orgayur_home_view.dart';
-import 'package:orgayur/app/modules/service/views/service_view.dart';
+import 'package:orgayur/app/modules/all%20product%20data/orgayur_home/views/orgayur_home_view.dart';
+import 'package:orgayur/app/modules/all%20service%20data/service/views/service_view.dart';
 import 'package:orgayur/app/modules/user_profile/views/user_profile_view.dart';
 
 import '../controllers/bottombar_controller.dart';

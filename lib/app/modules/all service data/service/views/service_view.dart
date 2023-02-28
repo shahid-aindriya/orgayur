@@ -4,9 +4,10 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:orgayur/app/modules/all%20service%20data/service/extra%20Screen/service_details.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../colors/colors.dart';
+import '../../../../colors/colors.dart';
 import '../controllers/service_controller.dart';
 
 class ServiceView extends GetView<ServiceController> {
@@ -225,20 +226,25 @@ class ServiceView extends GetView<ServiceController> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: 1.2, crossAxisCount: 4),
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Image.asset("assets/images/categories.png"),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      "Indoor Plants",
-                      style: GoogleFonts.roboto(
-                          color: Color.fromARGB(255, 15, 100, 53),
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w300),
-                    )
-                  ],
+                return InkWell(
+                  onTap: () {
+                    Get.to(ServiceDetails());
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset("assets/images/categories.png"),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        "Indoor Plants",
+                        style: GoogleFonts.roboto(
+                            color: Color.fromARGB(255, 15, 100, 53),
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w300),
+                      )
+                    ],
+                  ),
                 );
               },
             ),

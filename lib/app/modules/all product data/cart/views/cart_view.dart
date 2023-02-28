@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:orgayur/app/modules/all%20product%20data/checkout/views/checkout_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../colors/colors.dart';
+import '../../../../colors/colors.dart';
 import '../controllers/cart_controller.dart';
 
 class CartView extends GetView<CartController> {
@@ -303,7 +304,9 @@ class CartView extends GetView<CartController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(CheckoutView());
+                        },
                         child: Text("Continue to Checkout"),
                         style: ButtonStyle(
                             fixedSize:

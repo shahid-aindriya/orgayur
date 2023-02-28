@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:orgayur/app/modules/cart/views/cart_view.dart';
+import 'package:orgayur/app/modules/all%20product%20data/cart/views/cart_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../colors/colors.dart';
+import '../../../../colors/colors.dart';
 import '../controllers/product_details_controller.dart';
 
 class ProductDetailsView extends GetView<ProductDetailsController> {

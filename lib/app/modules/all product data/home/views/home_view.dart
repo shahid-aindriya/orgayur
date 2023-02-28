@@ -4,11 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:orgayur/app/modules/home/extra_screen/farm_shops.dart';
-import 'package:orgayur/app/modules/home/extra_screen/farm_shops_view.dart';
+import 'package:orgayur/app/modules/all%20product%20data/home/extra_screen/farm_shops.dart';
+import 'package:orgayur/app/modules/all%20product%20data/home/extra_screen/farm_shops_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../colors/colors.dart';
+import '../../../../colors/colors.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
